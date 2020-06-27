@@ -15,5 +15,9 @@ $ npm start
 navigate into database folder
 
 ```
+$ pip install -r requirements.txt
+```
+
+```
 $ python app.py
 ```
