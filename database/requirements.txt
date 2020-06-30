@@ -1,5 +1,0 @@
-flask
-flask_cors
-yfinance
-boto3
-pandas
