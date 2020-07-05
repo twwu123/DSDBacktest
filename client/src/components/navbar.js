@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import avatar from "../assets/tsz wai.PNG";
+import { Link } from "react-router-dom";
+import avatar from "../assets/temmie.png";
 import MobileRightMenuSlider from "@material-ui/core/Drawer";
 import {
   AppBar,
@@ -46,18 +47,22 @@ const menuItems = [
   {
     listIcon: <Home />,
     listText: "Home",
+    listPath: "/",
   },
   {
     listIcon: <AssignmentInd />,
     listText: "Resume",
+    listPath: "/resume",
   },
   {
     listIcon: <Apps />,
-    listText: "Portfolio",
+    listText: "Strategies",
+    listPath: "/strategies",
   },
   {
     listIcon: <ContactMail />,
     listText: "Contact",
+    listPath: "/contact",
   },
 ];
 
@@ -80,7 +85,7 @@ const Navbar = () => {
       <Divider />
       <List>
         {menuItems.map((lsItem, key) => (
-          <ListItem button key={key}>
+          <ListItem button key={key} component={Link} to={lsItem.listPath}>
             <ListItemIcon className={classes.listitem}>
               {lsItem.listIcon}
             </ListItemIcon>
@@ -102,7 +107,7 @@ const Navbar = () => {
               <ArrowBack style={{ color: "tomato" }} />
             </IconButton>
             <Typography variant="h5" style={{ color: "tan" }}>
-              Portfolio
+              DSD Backtest
             </Typography>
             <MobileRightMenuSlider
               open={state.right}

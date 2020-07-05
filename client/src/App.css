@@ -1,38 +1,23 @@
-.App {
-  text-align: center;
+body {
+  background: url(./assets/images/background.jpg) no-repeat center center fixed;
+  -webkit-background: cover;
+  -moz-background: cover;
+  -o-background: cover;
+  background: cover;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body::after {
+  opacity: 0.93;
+  top: 0;
+  left: 0;
+  width: "100%";
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  content: "";
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.MuiCard-root {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  justify-content: space-between;
 }
