@@ -1,5 +1,6 @@
 flask
 flask_cors
-yfinance
+yahoo_fin
 boto3
 pandas
+requests_html

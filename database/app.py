@@ -2,9 +2,10 @@ from flask import Flask
 from flask import jsonify
 from flask_cors import CORS
 import boto3
-from dbQuery import *
+from database.dbQuery import *
 import decimal
 import json
+
 
 class DecimalEncoder(json.JSONEncoder):
     def default(self, o):
@@ -19,7 +20,7 @@ CORS(app, resources={r'/*': {'origins': '*'}})
 
 dynamodb = boto3.resource('dynamodb', region_name="us-west-2")
 
-@app.route('/all_strats')
+@app.route('/')
 def index():
     return jsonify(get_all_strategies(dynamodb))
 
