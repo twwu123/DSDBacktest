@@ -1,1 +1,3 @@
 database/venv/
+node_modules
+*.pyc

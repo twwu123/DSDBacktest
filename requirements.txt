@@ -1,0 +1,6 @@
+flask
+flask_cors
+yahoo_fin
+boto3
+pandas
+requests_html

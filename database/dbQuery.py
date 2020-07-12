@@ -4,14 +4,34 @@ import json
 from decimal import Decimal
 
 
-def put_strategy(strategy, assets, returns, dynamodb):
+def put_strategy(strategy, assets, returns, description, params, dynamodb):
     table = dynamodb.Table('Strategies')
-    response = table.put_item(Item={
-        'strategy': strategy,
-        'assets': assets,
-        'returns': returns,
-    })
-    return response
+    try:
+        response = table.put_item(
+            Item={
+                'strategy': strategy,
+                'assets': assets,
+                'returns': returns,
+                'description': description,
+                'params': params
+            })
+    except ClientError as e:
+        print(e.response['Error']['Message'])
+    else:
+        return response
+
+
+def delete_Strategy(strategy, assets, dynamodb):
+    table = dynamodb.Table('Strategies')
+    try:
+        response = table.delete_item(Key={
+            'strategy': strategy,
+            'assets': assets
+        })
+    except ClientError as e:
+        print(e.response['Error']['Message'])
+    else:
+        return response
 
 
 def get_strategy(strategy, assets, dynamodb):
@@ -42,7 +62,7 @@ def get_strategy_by_asset(assets, dynamodb):
 def get_all_strategies(dynamodb):
     table = dynamodb.Table('Strategies')
     scan_kwargs = {
-        'ProjectionExpression': 'strategy, assets, #rt',
+        'ProjectionExpression': 'strategy, assets, #rt, description, params',
         'ExpressionAttributeNames': {
             '#rt': 'returns'
         }
@@ -60,7 +80,7 @@ def get_all_strategies(dynamodb):
     return response['Items']
 
 
-def update_strategy(strategy, assets, returns, dynamodb):
+def update_strategy(strategy, assets, returns, description, params, dynamodb):
     table = dynamodb.Table('Strategies')
     try:
         response = table.update_item(
@@ -68,9 +88,17 @@ def update_strategy(strategy, assets, returns, dynamodb):
                 'strategy': strategy,
                 'assets': assets
             },
-            UpdateExpression='set #r=:r',
-            ExpressionAttributeValues={':r': returns},
-            ExpressionAttributeNames={'#r': 'returns'},
+            UpdateExpression='set #r=:r, #d=:description, #p=:params',
+            ExpressionAttributeValues={
+                ':r': returns,
+                ':description': description,
+                ':params': params
+            },
+            ExpressionAttributeNames={
+                '#r': 'returns',
+                '#d': 'description',
+                '#p': 'params'
+            },
             ReturnValues='UPDATED_NEW')
     except ClientError as e:
         print(e.response['Error']['Message'])
