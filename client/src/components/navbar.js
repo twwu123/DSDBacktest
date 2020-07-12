@@ -23,7 +23,6 @@ import {
   ContactMail,
 } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core/styles";
-import App from "../App";
 
 //CSS styles
 const useStyles = makeStyles((theme) => ({
