@@ -3,7 +3,7 @@ import queue
 
 from abc import ABCMeta, abstractmethod
 
-from backtester.events import FillEvent, OrderEvent
+from .events import FillEvent, OrderEvent
 
 class ExecutionHandler(metaclass=ABCMeta):
     """

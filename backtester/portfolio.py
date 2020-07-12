@@ -6,7 +6,7 @@ import queue
 from abc import ABCMeta, abstractmethod
 from math import floor
 
-from backtester.events import FillEvent, OrderEvent
+from .events import FillEvent, OrderEvent
 
 class Portfolio(metaclass=ABCMeta):
     """

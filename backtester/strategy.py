@@ -5,7 +5,7 @@ import queue
 
 from abc import ABCMeta, abstractmethod
 
-from backtester.events import SignalEvent, MarketEvent
+from .events import SignalEvent, MarketEvent
 
 class Strategy(metaclass=ABCMeta):
     """

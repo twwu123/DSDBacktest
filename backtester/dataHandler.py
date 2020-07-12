@@ -4,7 +4,7 @@ from yahoo_fin.stock_info import *
 
 from abc import ABCMeta, abstractmethod
 
-from backtester.events import MarketEvent
+from .events import MarketEvent
 
 class DataHandler(metaclass=ABCMeta):
     """
