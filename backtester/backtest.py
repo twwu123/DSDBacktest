@@ -9,7 +9,7 @@ from backtester.executionHandler import SimulatedExecutionHandler
 
 # Declare the components with respective parameters
 events = queue.Queue()
-bars = HistoricDataHandler(events, ["AAPL"], start="2015", end="2020-07-11")
+bars = HistoricDataHandler(events, ["AAPL"], start="2015", end="2020-07-12")
 strategy = BuyAndHoldStrategy(bars, events)
 port = NaivePortfolio(bars, events, "2015-01-01")
 broker = SimulatedExecutionHandler(events)

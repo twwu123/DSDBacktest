@@ -180,7 +180,7 @@ class NaivePortfolio(Portfolio):
         Updates the portfolio current positions and holdings
         from a FillEvent.
         """
-        if event.type == 'FILL':
+        if isinstance(event, FillEvent):
             self.update_positions_from_fill(event)
             self.update_holdings_from_fill(event)
 
@@ -236,3 +236,4 @@ class NaivePortfolio(Portfolio):
 
     def print_portfolio_status(self):
         print(self.current_positions)
+        print(self.all_holdings)
