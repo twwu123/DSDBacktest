@@ -1,0 +1,23 @@
+body {
+  background: url(./assets/images/background.jpg) no-repeat center center fixed;
+  -webkit-background: cover;
+  -moz-background: cover;
+  -o-background: cover;
+  background: cover;
+}
+body::after {
+  opacity: 0.93;
+  top: 0;
+  left: 0;
+  width: "100%";
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  content: "";
+}
+.MuiCard-root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

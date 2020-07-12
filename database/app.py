@@ -13,16 +13,24 @@ class DecimalEncoder(json.JSONEncoder):
             return str(o)
         return super(DecimalEncoder, self).default(o)
 
+
 app = Flask(__name__)
-app.json_encoder=DecimalEncoder
+app.json_encoder = DecimalEncoder
 # enable CORS
 CORS(app, resources={r'/*': {'origins': '*'}})
 
 dynamodb = boto3.resource('dynamodb', region_name="us-west-2")
 
-@app.route('/')
+
+@app.route('/all_strats')
 def index():
     return jsonify(get_all_strategies(dynamodb))
 
-if(__name__ == "__main__"):
+
+@app.route('/all_users')
+def users():
+    return jsonify(get_all_users(dynamodb))
+
+
+if (__name__ == "__main__"):
     app.run(debug=True)
