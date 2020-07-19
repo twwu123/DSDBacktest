@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0f6779a8-59b4-43e7-87e6-0e2e5ca29fc0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/client/src/components/Strategies.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Strategies.js" afterDir="false" />
-    </list>
+    <list default="true" id="0f6779a8-59b4-43e7-87e6-0e2e5ca29fc0" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +11,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1eXL4hi7vHcVNmNu2cCwHNJSBCw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
@@ -30,9 +34,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1594462807077">
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1595150162501">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594462807077" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1595150162501" />
   </component>
 </project>

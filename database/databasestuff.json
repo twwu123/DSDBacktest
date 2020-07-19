@@ -1,0 +1,16 @@
+{
+  "nameofStrategy": {
+    "description of strategy": "good strat",
+    "variation": {
+      "params": { "rollingdays": 30 },
+      "sharpeRatio": 2,
+      "Drawdown": {
+        "average period": 1,
+        "maxDrawDown": 1,
+        "maxperiod": 1
+      },
+      "instruments": ["AAPL", "TSLA"],
+      "returns": { "2020": 1000 }
+    }
+  }
+}
