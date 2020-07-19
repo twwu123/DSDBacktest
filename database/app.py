@@ -2,7 +2,7 @@ from flask import Flask
 from flask import jsonify
 from flask_cors import CORS
 import boto3
-from dbQuery import *
+from database.dbQuery import *
 import decimal
 import json
 
